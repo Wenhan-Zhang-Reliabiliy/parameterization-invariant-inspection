@@ -449,7 +449,7 @@ Additional checks vary posterior grids, posterior draws, and optimization starts
 \section{Voltage ALT illustration}
 \label{sec:voltage}
 
-We illustrate the workflow using 24 capacitor failure times at 80, 100, and 120 V, with eight units per voltage \citep{mendezgonzalez2017}. A Weibull inverse-power model is used. The 80 and 100 V groups provide historical information, while the 120 V group is treated as a new interval-monitored group. The target is $R(1000)$ at 60 V. The normalized coordinate is $x=\{\log(V)-\log(120)\}/\log(120/80)$. The alternative coordinate $\log(V/120)$ multiplies $x$ by $\log(120/80)$ and transforms the acceleration coefficient and its prior accordingly.
+We illustrate the workflow using 24 capacitor failure times at 80, 100, and 120 V, with eight units per voltage \citep{yang2007}. A Weibull inverse-power model is used. The 80 and 100 V groups provide historical information, while the 120 V group is treated as a new interval-monitored group. The target is $R(1000)$ at 60 V. The normalized coordinate is $x=\{\log(V)-\log(120)\}/\log(120/80)$. The alternative coordinate $\log(V/120)$ multiplies $x$ by $\log(120/80)$ and transforms the acceleration coefficient and its prior accordingly.
 
 Historical fitting is used only to construct the empirical prior. The new-data posterior is
 \begin{equation}
