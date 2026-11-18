@@ -1,0 +1,4 @@
+Voltage empirical-prior experiment checks passed.
+Six rolling fits are finite and converged.
+Both codings have exactly transformed stress, target, and empirical prior.
+The new-data posterior does not reuse the historical likelihood.

@@ -168,4 +168,12 @@ R.~Pan, T.~Yang, Design and evaluation of accelerated life testing plans with
 J.~Sun, The Statistical Analysis of Interval-Censored Failure Time Data,
   Springer, 2006.
 
+\bibitem{mendezgonzalez2017}
+L.~C. M{\'e}ndez-Gonz{\'a}lez, L.~A. Rodr{\'i}guez-Pic{\'o}n, D.~J.
+  Valles-Rosales, R.~Romero-L{\'o}pez, A.~E. Quezada-Carre{\'o}n, Reliability
+  analysis for electronic devices using beta-weibull distribution, Quality and
+  Reliability Engineering International 33~(8) (2017) 2521--2530.
+\newblock \href {https://doi.org/10.1002/qre.2214}
+  {\path{doi:10.1002/qre.2214}}.
+
 \end{thebibliography}

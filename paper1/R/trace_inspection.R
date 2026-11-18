@@ -1,6 +1,7 @@
 plan_trace_schedule <- function(current_time, end_time, remaining, at_risk, stress,
                                 horizon, draws, warm_start = NULL, maxit = 100,
-                                minimum_gap = 0.02 * end_time, weight_matrix = NULL) {
+                                minimum_gap = 0.02 * end_time, weight_matrix = NULL,
+                                additional_starts = 0, start_seed = NULL) {
   k <- min(remaining, horizon)
   latest_time <- end_time - (remaining - k) * minimum_gap
   objective <- function(z) {
@@ -20,6 +21,10 @@ plan_trace_schedule <- function(current_time, end_time, remaining, at_risk, stre
   if (!is.null(warm_start) && length(warm_start) == k &&
       all(warm_start > current_time) && all(warm_start < latest_time)) {
     starts[[2]] <- times_to_increments(warm_start, current_time, latest_time, minimum_gap)
+  }
+  if (additional_starts > 0) {
+    if (!is.null(start_seed)) set.seed(start_seed)
+    starts <- c(starts, lapply(seq_len(additional_starts), function(i) rnorm(k + 1, sd = 2)))
   }
   best <- NULL
   for (start in starts) {

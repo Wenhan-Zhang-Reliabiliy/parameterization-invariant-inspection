@@ -446,6 +446,29 @@ The common pilot had already revealed a failure in 927 baseline pairs and 925 pr
 
 Additional checks vary posterior grids, posterior draws, and optimization starts. Additional starts changed some nearly equivalent plans but did not consistently reduce schedule or regret quantiles. Rolling sensitivity remained, whereas common-posterior checks showed numerically negligible bidirectional regret. The diagnostic tables use the first 200 replicates and are not directly comparable with the full-sample RMSE values above. Full results are given in Appendix \ref{app:numerical}.
 
+\section{Voltage ALT illustration}
+\label{sec:voltage}
+
+We illustrate the workflow using 24 capacitor failure times at 80, 100, and 120 V, with eight units per voltage \citep{mendezgonzalez2017}. A Weibull inverse-power model is used. The 80 and 100 V groups provide historical information, while the 120 V group is treated as a new interval-monitored group. The target is $R(1000)$ at 60 V. The normalized coordinate is $x=\{\log(V)-\log(120)\}/\log(120/80)$. The alternative coordinate $\log(V/120)$ multiplies $x$ by $\log(120/80)$ and transforms the acceleration coefficient and its prior accordingly.
+
+Historical fitting is used only to construct the empirical prior. The new-data posterior is
+\begin{equation}
+p(\theta\mid D_{\mathrm{new}})\propto
+\pi_{\mathrm{emp}}(\theta\mid D_{\mathrm{hist}})L_{\mathrm{new}}(\theta),
+\end{equation}
+so the historical likelihood does not appear again. The new group has a common pilot at 500 h, five inspections, and a latest permissible time of 2500 h. Trace-full, Weighted-full, and Reliability-full use 40 planning draws and 30 additional starts. Survivors are right-censored at the actual last inspection.
+
+Table \ref{tab:voltage} shows the resulting schedules and target estimates. The two codings produce identical interval counts. Maximum schedule differences are 0.080, 0.042, and below 0.001 h for Trace-full, Weighted-full, and Reliability-full, respectively. Reliability-full reveals the first failure at 899.8 h, compared with 1303.6 and 1413.4 h for the trace policies. This is a descriptive result for one retrospective dataset, not evidence of a general detection-time advantage.
+
+\begin{table}[t]
+\centering
+\caption{Voltage ALT plans. The target is $h=\log\{-\log R(1000)\}$ at 60 V. Schedules are shown for the normalized coding. Max. schedule $\Delta t$ compares the normalized and log-ratio codings. No failure had occurred at the 500 h pilot.}
+\label{tab:voltage}
+\resizebox{\textwidth}{!}{\input{voltage_case_table.tex}}
+\end{table}
+
+A parametric bootstrap anchored to the fit to all 24 observations gives 200 matched replicates. Normalized-coordinate RMSE values are 3.907, 3.950, and 3.934 for Trace-full, Weighted-full, and Reliability-full; the log-ratio values are 3.907, 3.950, and 3.934 to three decimals. All 90\% posterior intervals contain the anchor target, reflecting wide intervals rather than evidence of sharp prediction. No convergence failures or undetected pairs occur. Eight-fold leave-one-out analysis of the 120 V group gives mean log predictive scores of -7.799, -7.905, and -7.797, respectively. These checks support implementation and numerical consistency, not an accuracy advantage.
+
 \section{Discussion}
 
 The results separate two properties that are easy to conflate in sequential design: estimation accuracy and consistency under reparameterization. Reliability planning does not outperform full-horizon trace planning in the experiments. It does preserve the scalar-target objective when the stress coding and model parameters are transformed together. For applications in which analysts may use different but equivalent stress codings, this property has practical value independent of RMSE rankings.
@@ -454,7 +477,7 @@ Unweighted Fisher trace is interpretable when parameter scales are fixed by the 
 
 The computational results also limit the conclusion. Reliability-full uses about 28\% more planning time than Trace-full on average, with faster planning in two settings and slower planning in six. Posterior grid resolution affects target variance. Objective invariance does not ensure a unique optimizer or identical numerical schedules in the presence of flat directions and local solutions. The reported upper quantiles and outliers are therefore part of the evidence. Additional optimization starts are examined in the numerical diagnostics rather than assumed to remove these discrepancies.
 
-The numerical study assumes a correctly specified Weibull model. Joint settings use a common schedule across stress groups rather than independent asynchronous schedules. The point-estimate trace comparison captures RITO's full-horizon criterion and parameter updating but does not reproduce every feature of the original algorithm. Static Bayesian planning remains competitive in several single-stress settings, and the outcome-lookahead conclusion is limited to the tested two-step approximation.
+The numerical study assumes a correctly specified Weibull model. Joint settings use a common schedule across stress groups rather than independent asynchronous schedules. The point-estimate trace comparison captures RITO's full-horizon criterion and parameter updating but does not reproduce every feature of the original algorithm. Static Bayesian planning remains competitive in several single-stress settings, and the outcome-lookahead conclusion is limited to the tested two-step approximation. The voltage analysis is retrospective and uses only eight units in the new group.
 
 Future work can examine lifetime-model uncertainty and asynchronous inspection across stress groups. These extensions address different statistical questions and should not be conflated with the invariance result established here.
 
