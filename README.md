@@ -57,6 +57,14 @@ The implementation supports checkpoint files. Scenario, prior-strength, grid, dr
 - Rolling and common-posterior diagnostics vary grid resolution, posterior draws, and optimization starts.
 - A voltage ALT illustration compares all three rolling criteria under two equivalent codings, with eight-fold leave-one-out and 200-replicate parametric-bootstrap checks.
 
+## Voltage computational details
+
+- The empirical prior uses independent normal distributions. Under the normalized coding, the means for `(alpha, beta, log sigma)` are `(7.711033, -0.776703, -0.904535)` with standard deviations `(0.7, 0.7, 0.4)`. Under the log-ratio coding, the means are `(7.711033, -1.915586, -0.904535)` and standard deviations are `(0.7, 1.726412, 0.4)`.
+- Posterior grids contain `21^3 = 9261` points. Rolling planning uses 40 draws, and final target estimates and predictive scores use 10,000 posterior draws.
+- Each optimization adds 30 random starts to the default and, when available, warm start, giving 31 or 32 starts in total.
+- The historical empirical prior remains fixed during the bootstrap. A separate fit to all 24 observations supplies only the data-generating anchor.
+- Leave-one-out prediction targets the held-out exact failure time. The log score is the log of the Monte Carlo average Weibull predictive density at that time.
+
 ## Output organization
 
 Raw replicate-level files include `grid_scenario_*.csv`, `grid3d_scenario_*.csv`, `trace*_scenario_*.csv`, `factorial_scenario_*.csv`, `parameterization_scale_*.csv`, `weighted_trace_scale_*.csv`, `prior_*_scenario_*.csv`, and the sensitivity and common-regret series.
