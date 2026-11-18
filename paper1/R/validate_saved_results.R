@@ -1,0 +1,6 @@
+source("paper1/R/validate_model.R")
+source("paper1/R/validate_weighted_trace.R")
+source("paper1/R/validate_results.R")
+source("paper1/R/validate_optimizer_diagnostics.R")
+source("paper1/R/validate_voltage_empirical.R")
+cat("All saved-result validation checks passed.\n")

@@ -1,51 +1,36 @@
-# Parameterization-Invariant Reliability Criterion for Sequential Inspection Planning
+# Parameterization-Invariant Sequential Inspection Planning
 
-This repository contains the R code, saved numerical outputs, and manuscript source for:
+R code, synthetic and published data, saved numerical outputs, and validation scripts for:
 
-> Wenhan Zhang and Xiaojun Zhu. *A Parameterization-Invariant Reliability Criterion for Sequential Inspection Planning in Accelerated Life Tests*. Manuscript prepared in the Elsevier `cas-sc` format.
+> Wenhan Zhang and Xiaojun Zhu. *A Parameterization-Invariant Reliability Criterion for Sequential Inspection Planning in Accelerated Life Tests*.
 
-The paper embeds a Bayesian scalar-target reliability criterion in RITO-style rolling inspection planning. It compares this criterion with unweighted and covariance-weighted Fisher-trace criteria under equivalent linear model parameterizations, and evaluates both inspection schedules and first-detection outcomes. The study distinguishes objective invariance under exact transformations from numerical sensitivity in rolling posterior approximation and optimization.
+Repository: <https://github.com/Wenhan-Zhang-Reliabiliy/parameterization-invariant-inspection>
 
-## Repository contents
+The project compares Bayesian reliability, unweighted Fisher-trace, and covariance-weighted Fisher-trace criteria in rolling accelerated-life-test inspection planning. It distinguishes objective invariance under exact linear transformations from numerical sensitivity in rolling posterior approximation and optimization.
 
-- `paper1/R/`: 69 R scripts for simulation, posterior computation, optimization, table generation, figures, and validation.
-- `paper1/output/`: raw replicate-level results, derived summaries, generated figures, model checks, and session information.
-- `work/exploratory/voltage_case/`: voltage-case results, leave-one-out summaries, and 200-replicate parametric-bootstrap outputs.
-- `paper1/manuscript/`: manuscript LaTeX source, bibliography, generated table inputs, and compiled PDF.
+This repository contains only computational materials. Manuscript source files and compiled documents are not included.
 
-The saved outputs are included so that the manuscript can be rebuilt without repeating the simulations. No exploratory logs, superseded figures, or unrelated case studies are included.
+## Contents
+
+- `paper1/R/`: R scripts for simulation, posterior computation, optimization, analysis, and validation.
+- `paper1/output/`: raw replicate-level results, derived summaries, generated figures, and validation outputs.
+- `work/exploratory/voltage_case/`: voltage-case results, leave-one-out summaries, and parametric-bootstrap outputs. The directory name is retained for compatibility with the R scripts; it contains reported results rather than logs.
+
+Saved outputs are included so that the numerical checks can be run without repeating the simulations.
 
 ## Requirements
 
-The results were generated and validated with:
+The results were generated and validated with R 4.6.2 on Windows 11 using base R packages. See `paper1/output/final_session_info.txt` for the recorded session.
 
-- R 4.6.2 on Windows 11;
-- base R packages;
-- TeX Live 2026 with `cas-sc`, `elsarticle-num`, and standard LaTeX packages used in `manuscript.tex`.
+## Validate the saved results
 
-See `paper1/output/final_session_info.txt` for the recorded R session.
-
-## Rebuild from the saved outputs
-
-Run the following command from the repository root:
+From the repository root, run:
 
 ```bash
-Rscript paper1/R/rebuild_manuscript.R
+Rscript paper1/R/validate_saved_results.R
 ```
 
-This entry point regenerates summaries, figures, LaTeX tables, and result macros, then runs model, output, optimizer, cross-table, and manuscript consistency checks. It does not repeat the replicate-level simulations. On the development computer, reconstruction takes approximately one minute.
-
-To rebuild the PDF after reconstruction:
-
-```bash
-cd paper1/manuscript
-pdflatex -interaction=nonstopmode -halt-on-error manuscript.tex
-bibtex manuscript
-pdflatex -interaction=nonstopmode -halt-on-error manuscript.tex
-pdflatex -interaction=nonstopmode -halt-on-error manuscript.tex
-```
-
-The compiled manuscript is `paper1/manuscript/manuscript.pdf`.
+This entry point checks model identities, optimization diagnostics, primary outputs, weighted-trace experiments, and the voltage application without generating manuscript files.
 
 ## Full simulation
 
@@ -55,9 +40,11 @@ From the repository root, run:
 Rscript paper1/R/run_all.R
 ```
 
-The default is 1000 matched replicates for each main comparison. Numerical-sensitivity experiments use the first 200 replicates, and the refined outcome-lookahead feasibility check uses 20 replicates. A full rerun takes several hours and replaces generated outputs; use a clean copy of the repository when preserving the supplied results. The six weighted-trace experiments use a bounded pool of four R workers by default; `PAPER1_WORKERS` can reduce this number.
+The default is 1000 matched replicates for each main comparison. Numerical-sensitivity experiments use 200 replicates, and the refined outcome-lookahead feasibility check uses 20 replicates. A full rerun takes several hours and replaces generated outputs; use a clean copy of the repository when preserving the supplied results.
 
-The implementation supports checkpoint files. Scenario, prior-strength, grid, draw-count, and coding settings are controlled by the environment variables set in `run_all.R` and the individual `run_*.R` entry scripts.
+The six weighted-trace experiments use a bounded pool of four R workers by default. Set `PAPER1_WORKERS` to a value from 1 to 8 to adjust the pool. The voltage bootstrap also uses this worker setting.
+
+The implementation supports checkpoint files. Scenario, prior-strength, grid, draw-count, and coding settings are controlled by environment variables in `run_all.R` and the individual `run_*.R` entry scripts.
 
 ## Main numerical studies
 
@@ -72,33 +59,32 @@ The implementation supports checkpoint files. Scenario, prior-strength, grid, dr
 
 ## Output organization
 
-Raw replicate-level files include `grid_scenario_*.csv`, `grid3d_scenario_*.csv`, `trace*_scenario_*.csv`, `factorial_scenario_*.csv`, `parameterization_scale_*.csv`, `weighted_trace_scale_*.csv`, `prior_*_scenario_*.csv`, and the sensitivity and common-regret series. `engineering_detection_results.csv` contains the matched first-detection outcomes. Voltage-case CSV files are organized under `work/exploratory/voltage_case/`; the directory name is retained for compatibility with the R scripts, but the included files are the reported results rather than exploratory logs.
+Raw replicate-level files include `grid_scenario_*.csv`, `grid3d_scenario_*.csv`, `trace*_scenario_*.csv`, `factorial_scenario_*.csv`, `parameterization_scale_*.csv`, `weighted_trace_scale_*.csv`, `prior_*_scenario_*.csv`, and the sensitivity and common-regret series.
 
-Derived files include `criterion_summary.csv`, `criterion_reductions.csv`, `revision_paired_reductions.csv`, `common_regret_summary.csv`, `numerical_sensitivity_summary.csv`, `weighted_trace_summary.csv`, and `engineering_detection_summary.csv`. The current-prior and appendix intervals for shared comparisons are copied from the canonical `criterion_reductions.csv` output rather than bootstrapped independently.
+Derived files include `criterion_summary.csv`, `criterion_reductions.csv`, `revision_paired_reductions.csv`, `common_regret_summary.csv`, `numerical_sensitivity_summary.csv`, `weighted_trace_summary.csv`, and `engineering_detection_summary.csv`.
 
-Diagnostic subsamples are selected using `replicate <= 200`. The default scale-1 sensitivity rows therefore reproduce the first 200 rows of the corresponding main simulations; their RMSE values should not be compared directly with full-sample RMSE values.
+The current-prior and appendix intervals for shared comparisons use the canonical `criterion_reductions.csv` output rather than independent bootstrap runs. Diagnostic subsamples are selected using `replicate <= 200`.
 
-All current result files carry the model-version identifier `weibull-cloglog-z0-v2`. Random seeds are fixed in the corresponding R scripts.
+Voltage-case CSV files are organized under `work/exploratory/voltage_case/`. All current result files carry the model-version identifier `weibull-cloglog-z0-v2`, and random seeds are fixed in the corresponding R scripts.
 
 ## Validation
 
-`rebuild_manuscript.R` calls the validation scripts automatically. Important checks include:
+The checks cover:
 
 - Weibull survival, reliability-target, and finite-difference gradient identities;
 - replicate counts, finite errors, convergence indicators, and model-version consistency;
 - independent RMSE and Monte Carlo standard-error calculations from raw errors;
 - exact agreement between current-prior and corresponding main results;
-- canonical paired bootstrap intervals across the main text and appendix;
-- first-200-replicate sensitivity results against the main simulations;
-- weighted-trace invariance, all 6000 new replicates, and identical physical failure times across policies and codings;
-- manuscript numbers, table inputs, figure files, citations, references, and LaTeX log errors.
+- optimizer and grid diagnostics;
+- weighted-trace invariance and all 6000 weighted-trace replicates;
+- voltage posterior construction, coding transformations, leave-one-out results, and bootstrap completeness.
 
-The validation summary is recorded in `paper1/output/validation_summary.txt`, `paper1/output/second_round_consistency.txt`, `paper1/output/ress_enhancement_validation.txt`, `paper1/output/ress_review_validation.txt`, and `paper1/output/manuscript_validation.txt`.
+Validation outputs are recorded in `paper1/output/` and `work/exploratory/voltage_case/validation.txt`.
 
 ## Data availability
 
-The simulation data are generated by the R scripts. The voltage illustration uses 24 published capacitor failure times, embedded in `paper1/R/voltage_empirical_model.R` with the source cited in the manuscript. No external data download is required.
+Simulation data are generated by the R scripts. The voltage illustration uses 24 published capacitor failure times from Guangbin Yang's *Life Cycle Reliability Engineering* (2007), DOI: [10.1002/9780470117880](https://doi.org/10.1002/9780470117880). The data are embedded in `paper1/R/voltage_empirical_model.R`; no external download is required.
 
-## Manuscript status and contact
+## Contact
 
-This is a submission-oriented manuscript, not a published article. Please check the manuscript and repository version before citing or reusing the code. Corresponding author: Xiaojun Zhu, Xi'an Jiaotong-Liverpool University.
+Corresponding author: Xiaojun Zhu, Xi'an Jiaotong-Liverpool University.

@@ -31,16 +31,6 @@ bootstrap <- read.csv("work/exploratory/voltage_case/voltage_bootstrap_summary.c
 stopifnot(nrow(loo) == 3, all(loo$folds == 8), all(loo$all_converged),
           nrow(bootstrap) == 3, all(bootstrap$replicates == 200),
           all(bootstrap$convergence_failures == 0), all(bootstrap$undetected_pairs == 0))
-table <- paste(readLines("paper1/manuscript/voltage_case_table.tex", warn = FALSE),
-               collapse = "\n")
-normalized_results <- results[results$coding == "normalized", ]
-for (i in seq_len(nrow(normalized_results))) {
-  x <- normalized_results[i, ]
-  if (!grepl(gsub(";", ", ", x$schedule), table, fixed = TRUE)) {
-    stop("Voltage schedule mismatch: ", x$schedule)
-  }
-            stopifnot(grepl(sprintf("%.3f", x$estimate), table, fixed = TRUE))
-}
 writeLines(c("Voltage empirical-prior experiment checks passed.",
              "Six rolling fits are finite and converged.",
              "Both codings have exactly transformed stress, target, and empirical prior.",
