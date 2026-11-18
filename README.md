@@ -4,11 +4,11 @@ This repository contains the R code, saved numerical outputs, and manuscript sou
 
 > Wenhan Zhang and Xiaojun Zhu. *A Parameterization-Invariant Reliability Criterion for Sequential Inspection Planning in Accelerated Life Tests*. Manuscript prepared in the Elsevier `cas-sc` format.
 
-The paper embeds a Bayesian scalar-target reliability criterion in RITO-style rolling inspection planning. It compares the criterion with the unweighted Fisher-trace criterion under equivalent linear model parameterizations. The study distinguishes objective invariance under exact transformations from numerical sensitivity in rolling posterior approximation and optimization.
+The paper embeds a Bayesian scalar-target reliability criterion in RITO-style rolling inspection planning. It compares this criterion with unweighted and covariance-weighted Fisher-trace criteria under equivalent linear model parameterizations, and evaluates both inspection schedules and first-detection outcomes. The study distinguishes objective invariance under exact transformations from numerical sensitivity in rolling posterior approximation and optimization.
 
 ## Repository contents
 
-- `paper1/R/`: 59 R scripts for simulation, posterior computation, optimization, case analysis, table generation, figures, and validation.
+- `paper1/R/`: 64 R scripts for simulation, posterior computation, optimization, case analysis, table generation, figures, and validation.
 - `paper1/output/`: raw replicate-level results, derived summaries, generated figures, model checks, and session information.
 - `paper1/manuscript/`: manuscript LaTeX source, bibliography, generated table inputs, and compiled PDF.
 
@@ -54,7 +54,7 @@ From the repository root, run:
 Rscript paper1/R/run_all.R
 ```
 
-The default is 1000 matched replicates for each main comparison. Numerical-sensitivity experiments use the first 200 replicates, and the refined outcome-lookahead feasibility check uses 20 replicates. A full serial rerun takes several hours and replaces generated outputs; use a clean copy of the repository when preserving the supplied results.
+The default is 1000 matched replicates for each main comparison. Numerical-sensitivity experiments use the first 200 replicates, and the refined outcome-lookahead feasibility check uses 20 replicates. A full rerun takes several hours and replaces generated outputs; use a clean copy of the repository when preserving the supplied results. The six weighted-trace experiments use a bounded pool of four R workers by default; `PAPER1_WORKERS` can reduce this number.
 
 The implementation supports checkpoint files. Scenario, prior-strength, grid, draw-count, and coding settings are controlled by the environment variables set in `run_all.R` and the individual `run_*.R` entry scripts.
 
@@ -63,15 +63,17 @@ The implementation supports checkpoint files. Scenario, prior-strength, grid, dr
 - Eight settings compare one-step and full-horizon reliability and trace policies using 1000 matched replicates.
 - Two factorial experiments separate posterior averaging from criterion choice.
 - Equivalent stress codings use scales 1, 2, and 10 with matched physical data and transformed priors.
+- Six covariance-weighted trace series provide 6000 additional matched replicates across two scenarios and three codings.
+- Saved-schedule analyses compare first-detection times and detection-stage agreement using identical physical failure times.
 - Common-posterior fixed-pilot experiments evaluate bidirectional cross-coding regret.
 - Rolling and common-posterior diagnostics vary grid resolution, posterior draws, and optimization starts.
 - A retrospective Arrhenius analysis uses the public motorette data from MASS.
 
 ## Output organization
 
-Raw replicate-level files include `grid_scenario_*.csv`, `grid3d_scenario_*.csv`, `trace*_scenario_*.csv`, `factorial_scenario_*.csv`, `parameterization_scale_*.csv`, `prior_*_scenario_*.csv`, and the sensitivity and common-regret series.
+Raw replicate-level files include `grid_scenario_*.csv`, `grid3d_scenario_*.csv`, `trace*_scenario_*.csv`, `factorial_scenario_*.csv`, `parameterization_scale_*.csv`, `weighted_trace_scale_*.csv`, `prior_*_scenario_*.csv`, and the sensitivity and common-regret series. `engineering_detection_results.csv` contains the matched first-detection outcomes.
 
-Derived files include `criterion_summary.csv`, `criterion_reductions.csv`, `revision_paired_reductions.csv`, `common_regret_summary.csv`, and `numerical_sensitivity_summary.csv`. The current-prior and appendix intervals for shared comparisons are copied from the canonical `criterion_reductions.csv` output rather than bootstrapped independently.
+Derived files include `criterion_summary.csv`, `criterion_reductions.csv`, `revision_paired_reductions.csv`, `common_regret_summary.csv`, `numerical_sensitivity_summary.csv`, `weighted_trace_summary.csv`, and `engineering_detection_summary.csv`. The current-prior and appendix intervals for shared comparisons are copied from the canonical `criterion_reductions.csv` output rather than bootstrapped independently.
 
 Diagnostic subsamples are selected using `replicate <= 200`. The default scale-1 sensitivity rows therefore reproduce the first 200 rows of the corresponding main simulations; their RMSE values should not be compared directly with full-sample RMSE values.
 
@@ -87,9 +89,10 @@ All current result files carry the model-version identifier `weibull-cloglog-z0-
 - exact agreement between current-prior and corresponding main results;
 - canonical paired bootstrap intervals across the main text and appendix;
 - first-200-replicate sensitivity results against the main simulations;
+- weighted-trace invariance, all 6000 new replicates, and identical physical failure times across policies and codings;
 - manuscript numbers, table inputs, figure files, citations, references, and LaTeX log errors.
 
-The validation summary is recorded in `paper1/output/validation_summary.txt`, `paper1/output/second_round_consistency.txt`, and `paper1/output/manuscript_validation.txt`.
+The validation summary is recorded in `paper1/output/validation_summary.txt`, `paper1/output/second_round_consistency.txt`, `paper1/output/ress_enhancement_validation.txt`, and `paper1/output/manuscript_validation.txt`.
 
 ## Data availability
 

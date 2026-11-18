@@ -1,6 +1,6 @@
 plan_trace_schedule <- function(current_time, end_time, remaining, at_risk, stress,
                                 horizon, draws, warm_start = NULL, maxit = 100,
-                                minimum_gap = 0.02 * end_time) {
+                                minimum_gap = 0.02 * end_time, weight_matrix = NULL) {
   k <- min(remaining, horizon)
   latest_time <- end_time - (remaining - k) * minimum_gap
   objective <- function(z) {
@@ -11,7 +11,8 @@ plan_trace_schedule <- function(current_time, end_time, remaining, at_risk, stre
         information <- information + conditional_information(
           times, current_time, at_risk[g], draws[m, ], stress[g])
       }
-      sum(diag(information))
+      if (is.null(weight_matrix)) sum(diag(information)) else
+        sum(diag(weight_matrix %*% information))
     }, numeric(1))
     -mean(values)
   }

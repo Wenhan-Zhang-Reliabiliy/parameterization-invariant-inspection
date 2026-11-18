@@ -20,6 +20,7 @@ for (index in 1:2) {
     source("paper1/R/run_parameterization_check.R")
   }
 }
+source("paper1/R/run_weighted_trace_experiments.R")
 for (type in c("draws", "grid")) {
   for (index in 1:2) {
     Sys.setenv(PAPER1_SCENARIO = index, PAPER1_SENSITIVITY_TYPE = type,

@@ -1,0 +1,7 @@
+"scenario","stress_scale","rows","replicates","finite","output"
+1,1,1000,1000,TRUE,"paper1/output/weighted_trace_scale_1_scenario_1.csv"
+1,2,1000,1000,TRUE,"paper1/output/weighted_trace_scale_2_scenario_1.csv"
+1,10,1000,1000,TRUE,"paper1/output/weighted_trace_scale_10_scenario_1.csv"
+2,1,1000,1000,TRUE,"paper1/output/weighted_trace_scale_1_scenario_2.csv"
+2,2,1000,1000,TRUE,"paper1/output/weighted_trace_scale_2_scenario_2.csv"
+2,10,1000,1000,TRUE,"paper1/output/weighted_trace_scale_10_scenario_2.csv"

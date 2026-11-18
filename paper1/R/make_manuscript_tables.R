@@ -8,6 +8,11 @@ macros <- c(
   sprintf("\\newcommand{\\HighResolutionOutcomeTime}{%.1f}", mean(high$elapsed)),
   sprintf("\\newcommand{\\HighResolutionBatchRMSE}{%.3f}", sqrt(mean(full$error^2)))
 )
+identity <- read.csv("paper1/output/parameterization_identity.csv")
+if ("max_relative_weighted_difference" %in% names(identity)) {
+  macros <- c(macros, sprintf("\\newcommand{\\MaxWeightedIdentityRelative}{%s}",
+    tex_scientific(max(identity$max_relative_weighted_difference))))
+}
 common_path <- "paper1/output/common_regret_summary.csv"
 if (file.exists(common_path)) {
   common <- read.csv(common_path)

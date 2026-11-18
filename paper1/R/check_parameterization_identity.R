@@ -25,7 +25,7 @@ evaluate_parameterization <- function(scenario) {
   observed_information <- posterior$hessian - prior_precision_matrix
   at_risk <- vapply(failure_times, function(x) sum(x > 200), numeric(1))
   times <- c(430, 620, 810, 1000)
-  reliability_utility <- trace_utility <- numeric(nrow(draws))
+  reliability_utility <- trace_utility <- weighted_trace_utility <- numeric(nrow(draws))
   for (m in seq_len(nrow(draws))) {
     information <- observed_information + prior_precision_matrix
     future_information <- matrix(0, 3, 3)
@@ -37,9 +37,10 @@ evaluate_parameterization <- function(scenario) {
     gradient <- target_gradient(draws[m, ], x_use = scenario$x_use)
     reliability_utility[m] <- crossprod(gradient, solve(information) %*% gradient)
     trace_utility[m] <- sum(diag(future_information))
+    weighted_trace_utility[m] <- sum(diag(posterior$covariance %*% future_information))
   }
   list(mode = fit$mean, draws = draws, reliability_utility = reliability_utility,
-       trace_utility = trace_utility,
+       trace_utility = trace_utility, weighted_trace_utility = weighted_trace_utility,
        mean_log_utility = mean(log(reliability_utility)),
        log_mean_utility = log(mean(reliability_utility)))
 }
@@ -56,6 +57,10 @@ output <- lapply(scenarios, function(scenario) {
                second$reliability_utility)),
              max_relative_utility_difference = max(abs(first$reliability_utility -
                second$reliability_utility) / pmax(abs(first$reliability_utility), 1e-12)),
+             max_absolute_weighted_difference = max(abs(first$weighted_trace_utility -
+               second$weighted_trace_utility)),
+             max_relative_weighted_difference = max(abs(first$weighted_trace_utility -
+               second$weighted_trace_utility) / pmax(abs(first$weighted_trace_utility), 1e-12)),
              trace_scale_1 = mean(first$trace_utility),
              trace_scale_10 = mean(second$trace_utility),
              mean_log_utility_scale_1 = first$mean_log_utility,

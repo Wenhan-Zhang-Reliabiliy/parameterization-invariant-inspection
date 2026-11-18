@@ -1,5 +1,5 @@
 Manuscript numeric checks passed against CSV outputs.
-Checked table inputs: 18
+Checked table inputs: 19
 Checked figure files: 4
 No undefined citations, undefined references, overfull boxes, or fatal LaTeX errors.
 No superseded batch-informed or next-inspection-only RITO claims.

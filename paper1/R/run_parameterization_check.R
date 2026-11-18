@@ -15,8 +15,9 @@ output <- Sys.getenv("PAPER1_PARAMETERIZATION_OUTPUT",
          "_scenario_", index, ".csv"))
 log_output <- paste0("work/exploratory/logs/progress_parameterization_", stress_scale,
                      "_", index, ".txt")
-policies <- if (identical(Sys.getenv("PAPER1_RELIABILITY_ONLY", "0"), "1")) "Full" else
-  c("Trace-full", "Full")
+policies <- if (identical(Sys.getenv("PAPER1_WEIGHTED_ONLY", "0"), "1")) "Weighted-trace" else
+  if (identical(Sys.getenv("PAPER1_RELIABILITY_ONLY", "0"), "1")) "Full" else
+    c("Trace-full", "Full")
 results <- run_with_checkpoints(replicates, function(replicate) {
   run_grid3d_replicate(replicate, scenario = scenario,
     policies = policies, planning_samples = 16, grid_size = 21)

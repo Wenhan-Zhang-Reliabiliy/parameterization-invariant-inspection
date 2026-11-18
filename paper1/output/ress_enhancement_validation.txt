@@ -1,0 +1,4 @@
+RESS enhancement checks passed.
+Six weighted-trace outputs contain 1000 replicates each.
+Engineering outcomes use identical physical failure times across policies and codings.
+Weighted-trace identity, summary table, and detection results are consistent.

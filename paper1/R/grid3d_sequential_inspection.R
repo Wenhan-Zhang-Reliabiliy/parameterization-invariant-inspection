@@ -36,9 +36,10 @@ simulate_grid3d_group_policy <- function(policy, failure_times, stress, prior_me
       if (policy == "RITO") {
         future <- plan_group_rito(posterior, times[length(times)], end_time, remaining,
                                   at_risk, stress, prior_sd, draws)
-      } else if (policy == "Trace-full") {
+      } else if (policy %in% c("Trace-full", "Weighted-trace")) {
         future <- plan_trace_schedule(times[length(times)], end_time, remaining,
-                                     at_risk, stress, horizon, draws, warm_start)
+          at_risk, stress, horizon, draws, warm_start,
+          weight_matrix = if (policy == "Weighted-trace") posterior$covariance else NULL)
       } else {
         future <- plan_group_schedule(posterior, times[length(times)], end_time, remaining,
                                       at_risk, stress, prior_mean, prior_sd,
@@ -46,7 +47,7 @@ simulate_grid3d_group_policy <- function(policy, failure_times, stress, prior_me
                                       additional_starts = additional_starts,
                                       start_seed = seed + 100 * stage)
       }
-      if (!policy %in% c("RITO", "Trace-full")) {
+      if (!policy %in% c("RITO", "Trace-full", "Weighted-trace")) {
         planning_objectives <- c(planning_objectives, attr(future, "objective"))
         optimizer_convergence <- max(optimizer_convergence, attr(future, "optimizer_convergence"))
       }
