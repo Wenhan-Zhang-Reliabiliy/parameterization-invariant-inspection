@@ -9,6 +9,7 @@
 \usepackage{algorithmic}
 \usepackage{float}
 \usepackage{setspace}
+\usepackage{xurl}
 \hypersetup{hypertexnames=false}
 
 \makeatletter
@@ -560,7 +561,7 @@ This work was supported by the Jiangsu Provincial Natural Science Foundation for
 The authors declare no competing interests.
 
 \subsection*{Data and code availability}
-The R code and saved outputs used in this study are provided as supplementary material. The full entry point is `run\_all.R`; after the simulations are complete, `rebuild\_manuscript.R` regenerates all manuscript objects without repeating them. Numerical diagnostics select the first 200 replicates using `replicate <= 200`. A full serial rerun takes several hours; rebuilding from the saved outputs takes about one minute. Model checks are in `validate\_model.R`, and output checks are in `validate\_results.R`, `validate\_second\_round.R`, and `validate\_manuscript.R`. Random seeds, raw outputs, model-version identifiers, and session information are included. The code corresponds to the revised manuscript with reliability target $h=z_0$.
+The R code and saved outputs used in this study are available at \url{https://github.com/Wenhan-Zhang-Reliabiliy/parameterization-invariant-inspection}. The full entry point is `run\_all.R`; after the simulations are complete, `rebuild\_manuscript.R` regenerates all manuscript objects without repeating them. Numerical diagnostics select the first 200 replicates using `replicate <= 200`. A full serial rerun takes several hours; rebuilding from the saved outputs takes about one minute. Model checks are in `validate\_model.R`, and output checks are in `validate\_results.R`, `validate\_second\_round.R`, and `validate\_manuscript.R`. Random seeds, raw outputs, model-version identifiers, and session information are included. The code corresponds to the revised manuscript with reliability target $h=z_0$.
 
 \subsection*{Author contributions}
 Wenhan Zhang: conceptualization, methodology, software, formal analysis, investigation, writing, and visualization. Xiaojun Zhu: conceptualization, supervision, and writing review and editing.
