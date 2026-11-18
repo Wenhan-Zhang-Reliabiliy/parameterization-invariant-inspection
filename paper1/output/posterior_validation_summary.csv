@@ -1,0 +1,16 @@
+"scenario","method","target_mean","target_variance"
+"Baseline","Laplace",-1.80493759418973,2.51958533716263
+"Baseline","Grid",-1.98927249737706,0.334819847647714
+"Baseline","MCMC",-1.98825029688104,0.331035261247388
+"Sparse failures","Laplace",-1.75598676290303,1.78924656407845
+"Sparse failures","Grid",-1.90040171556839,0.257927055350632
+"Sparse failures","MCMC",-1.89835332529151,0.253624988933613
+"Location prior offset","Laplace",-1.52053631124163,1.76376377084433
+"Location prior offset","Grid",-1.67021630636581,0.228102337441221
+"Location prior offset","MCMC",-1.66773931515265,0.221858153809399
+"Two-stress baseline","Laplace",-2.28147606108977,5.31246904004479
+"Two-stress baseline","Grid3D",-2.63363339447143,4.77528213210134
+"Two-stress baseline","MCMC",-2.6463208339513,5.0214024372995
+"Acceleration prior offset","Laplace",-1.57062266729591,2.71779249026815
+"Acceleration prior offset","Grid3D",-1.82755767102879,2.01132168668497
+"Acceleration prior offset","MCMC",-1.88065881329945,2.01446847319082

@@ -1,0 +1,2 @@
+"max_target_error","max_target_gradient_error","max_cdf_gradient_error","baseline_reliability","empirical_reliability","minimum_observed_information_eigenvalue","nonpositive_observed_information_cases","minimum_posterior_precision_eigenvalue"
+0,2.02680983107939e-09,4.70045335987379e-10,0.850275422916546,0.851785,-0.366617645802143,125,1.5625

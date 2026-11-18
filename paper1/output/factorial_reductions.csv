@@ -1,0 +1,11 @@
+"scenario","policy","baseline","reduction","lower","upper"
+"Two-stress baseline","Bayesian reliability","Plug-in trace",-0.191407089555162,-0.658473137623683,0.207234155957692
+"Acceleration prior offset","Bayesian reliability","Plug-in trace",-0.188903460675971,-0.717931797859683,0.245768950935121
+"Two-stress baseline","Bayesian trace","Plug-in trace",-0.159183845078092,-0.608929442546091,0.216503485465147
+"Acceleration prior offset","Bayesian trace","Plug-in trace",-0.164139630267024,-0.687893017189833,0.24196360508002
+"Two-stress baseline","Plug-in reliability","Plug-in trace",-1.14791620102581,-3.04133410617347,0.604819248063893
+"Acceleration prior offset","Plug-in reliability","Plug-in trace",-1.64895654868342,-3.40111463504331,-0.00331496158507694
+"Two-stress baseline","Bayesian reliability","Bayesian trace",-0.0321720317997931,-0.245103421333015,0.176365240194454
+"Acceleration prior offset","Bayesian reliability","Bayesian trace",-0.0247232497582184,-0.21673204183621,0.167680600686149
+"Two-stress baseline","Bayesian reliability","Plug-in reliability",0.945653798314194,-0.757027968989066,2.71032748758706
+"Acceleration prior offset","Bayesian reliability","Plug-in reliability",1.43636800374647,-0.316478409063947,3.23989996827856

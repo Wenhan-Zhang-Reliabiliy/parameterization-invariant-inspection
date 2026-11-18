@@ -1,0 +1,6 @@
+Model version: weibull-cloglog-z0-v2
+Current-prior raw results are identical to the main results for Baseline and Sparse failures.
+Table 5 and Table A.17 use identical RMSE values for shared policies.
+All reported RMSE and Monte Carlo SE values match independent calculations from raw errors.
+Active tables contain no legacy policy labels, negative zero, or plain-text scientific notation.
+Fixed-pilot regret macros match the common-posterior outputs.

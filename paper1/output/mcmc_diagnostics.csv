@@ -1,0 +1,6 @@
+"scenario","acceptance","rhat","chains","iterations_per_chain","warmup_per_chain","thin","retained_total","model_version"
+"Baseline",0.34604375,0.999982976787328,2,80000,20000,10,12000,"weibull-cloglog-z0-v2"
+"Sparse failures",0.34505,1.00039601781172,2,80000,20000,10,12000,"weibull-cloglog-z0-v2"
+"Location prior offset",0.34290625,0.999916843123748,2,80000,20000,10,12000,"weibull-cloglog-z0-v2"
+"Two-stress baseline",0.311725,1.00037208279797,2,80000,20000,10,12000,"weibull-cloglog-z0-v2"
+"Acceleration prior offset",0.30575,0.999916914604611,2,80000,20000,10,12000,"weibull-cloglog-z0-v2"

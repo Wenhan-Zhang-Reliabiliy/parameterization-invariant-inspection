@@ -1,0 +1,9 @@
+"scenario","policy","comparison","reduction","lower","upper"
+"Two-stress baseline","Trace-full","2 vs 1",-0.00490945742472881,-0.130728285646109,0.126697469255288
+"Two-stress baseline","Trace-full","10 vs 1",-0.334869823915462,-0.709180222758499,0.0569130613426783
+"Two-stress baseline","Reliability-full","2 vs 1",0.00790085003001817,-0.0603114984896402,0.0782577942722962
+"Two-stress baseline","Reliability-full","10 vs 1",0.0483501340770798,-0.0227676751270556,0.123007907448702
+"Acceleration prior offset","Trace-full","2 vs 1",0.0182287293377437,-0.160164414322606,0.208078686288782
+"Acceleration prior offset","Trace-full","10 vs 1",-0.244330954712435,-0.648303217032198,0.135714397842568
+"Acceleration prior offset","Reliability-full","2 vs 1",0.0415331966025057,-0.029851353621102,0.129715385441553
+"Acceleration prior offset","Reliability-full","10 vs 1",0.0494473248747962,-0.0103751069121971,0.134218286535692

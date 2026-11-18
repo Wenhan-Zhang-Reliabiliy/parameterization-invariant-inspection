@@ -1,0 +1,4 @@
+Validated result files: 34
+Validated primary replicates per policy and scenario: 1000
+Maximum relative reliability-utility identity error: 5.822802e-06
+Motorette coding priors are equivalent and all case fits converged.

@@ -1,0 +1,161 @@
+"scenario","replicate","minimum_eigenvalue","posterior_precision_minimum"
+"Baseline",1,0,1.5625
+"Baseline",2,0,1.5625
+"Baseline",3,0,1.5625
+"Baseline",4,0,1.5625
+"Baseline",5,0,1.5625
+"Baseline",6,0,1.5625
+"Baseline",7,0,1.5625
+"Baseline",8,0,1.5625
+"Baseline",9,0,1.5625
+"Baseline",10,0,1.5625
+"Baseline",11,0,1.5625
+"Baseline",12,0,1.5625
+"Baseline",13,0,1.5625
+"Baseline",14,0,1.5625
+"Baseline",15,0,1.5625
+"Baseline",16,0,1.5625
+"Baseline",17,0,1.5625
+"Baseline",18,0,1.5625
+"Baseline",19,0,1.5625
+"Baseline",20,0,1.5625
+"Small sample",1,0,1.5625
+"Small sample",2,0,1.5625
+"Small sample",3,0,1.5625
+"Small sample",4,0,1.5625
+"Small sample",5,0,1.5625
+"Small sample",6,0,1.5625
+"Small sample",7,0,1.5625
+"Small sample",8,0,1.5625
+"Small sample",9,0,1.5625
+"Small sample",10,0,1.5625
+"Small sample",11,0,1.5625
+"Small sample",12,0,1.5625
+"Small sample",13,0,1.5625
+"Small sample",14,0,1.5625
+"Small sample",15,0,1.5625
+"Small sample",16,0,1.5625
+"Small sample",17,0,1.5625
+"Small sample",18,0,1.5625
+"Small sample",19,-0.0478254972181489,1.5625
+"Small sample",20,0,1.5625
+"Sparse failures",1,0,1.5625
+"Sparse failures",2,0,1.5625
+"Sparse failures",3,0,1.5625
+"Sparse failures",4,0,1.5625
+"Sparse failures",5,-0.00739521561444434,1.5625
+"Sparse failures",6,0,1.5625
+"Sparse failures",7,0,1.5625
+"Sparse failures",8,0,1.5625
+"Sparse failures",9,0,1.5625
+"Sparse failures",10,0,1.5625
+"Sparse failures",11,0,1.5625
+"Sparse failures",12,0,1.5625
+"Sparse failures",13,0,1.5625
+"Sparse failures",14,0,1.5625
+"Sparse failures",15,0,1.5625
+"Sparse failures",16,0,1.5625
+"Sparse failures",17,0,1.5625
+"Sparse failures",18,0,1.5625
+"Sparse failures",19,0,1.5625
+"Sparse failures",20,0,1.5625
+"Small and sparse",1,0,1.5625
+"Small and sparse",2,0,1.5625
+"Small and sparse",3,0,1.5625
+"Small and sparse",4,0,1.5625
+"Small and sparse",5,-0.00378942479032673,1.5625
+"Small and sparse",6,0,1.5625
+"Small and sparse",7,0,1.5625
+"Small and sparse",8,0,1.5625
+"Small and sparse",9,0,1.5625
+"Small and sparse",10,0,1.5625
+"Small and sparse",11,0,1.5625
+"Small and sparse",12,0,1.5625
+"Small and sparse",13,0,1.5625
+"Small and sparse",14,0,1.5625
+"Small and sparse",15,0,1.5625
+"Small and sparse",16,0,1.5625
+"Small and sparse",17,0,1.5625
+"Small and sparse",18,0,1.5625
+"Small and sparse",19,0,1.5625
+"Small and sparse",20,0,1.5625
+"Shape prior offset",1,0,1.5625
+"Shape prior offset",2,0,1.5625
+"Shape prior offset",3,0,1.5625
+"Shape prior offset",4,0,1.5625
+"Shape prior offset",5,0,1.5625
+"Shape prior offset",6,0,1.5625
+"Shape prior offset",7,0,1.5625
+"Shape prior offset",8,0,1.5625
+"Shape prior offset",9,0,1.5625
+"Shape prior offset",10,0,1.5625
+"Shape prior offset",11,0,1.5625
+"Shape prior offset",12,0,1.5625
+"Shape prior offset",13,0,1.5625
+"Shape prior offset",14,0,1.5625
+"Shape prior offset",15,0,1.5625
+"Shape prior offset",16,0,1.5625
+"Shape prior offset",17,0,1.5625
+"Shape prior offset",18,0,1.5625
+"Shape prior offset",19,0,1.5625
+"Shape prior offset",20,0,1.5625
+"Location prior offset",1,0,1.5625
+"Location prior offset",2,0,1.5625
+"Location prior offset",3,0,1.5625
+"Location prior offset",4,0,1.5625
+"Location prior offset",5,0,1.5625
+"Location prior offset",6,0,1.5625
+"Location prior offset",7,0,1.5625
+"Location prior offset",8,0,1.5625
+"Location prior offset",9,0,1.5625
+"Location prior offset",10,0,1.5625
+"Location prior offset",11,0,1.5625
+"Location prior offset",12,0,1.5625
+"Location prior offset",13,0,1.5625
+"Location prior offset",14,0,1.5625
+"Location prior offset",15,0,1.5625
+"Location prior offset",16,0,1.5625
+"Location prior offset",17,0,1.5625
+"Location prior offset",18,0,1.5625
+"Location prior offset",19,0,1.5625
+"Location prior offset",20,0,1.5625
+"Two-stress baseline",1,0.00759263893187072,1.68677864403093
+"Two-stress baseline",2,0.173488493880239,1.75388359291132
+"Two-stress baseline",3,0.105416642069529,1.89070006680986
+"Two-stress baseline",4,0.0655737730377956,1.8799154025003
+"Two-stress baseline",5,0.136516865558643,1.82563466082351
+"Two-stress baseline",6,0.173488493880239,1.75388359291132
+"Two-stress baseline",7,0.00759263893187072,1.68677864403093
+"Two-stress baseline",8,-0.240937542924061,1.61173718540695
+"Two-stress baseline",9,0.173488493880239,1.75388359291132
+"Two-stress baseline",10,0.136516865558643,1.82563466082351
+"Two-stress baseline",11,0.141622572767106,1.81841205317657
+"Two-stress baseline",12,0.136516865558643,1.82563466082351
+"Two-stress baseline",13,0.0803369725985356,1.64385093627602
+"Two-stress baseline",14,-0.00696341414170201,1.92574403233923
+"Two-stress baseline",15,0.206196012757018,1.98054270802053
+"Two-stress baseline",16,0.0934665295276615,1.99350530706718
+"Two-stress baseline",17,0.136516865558643,1.82563466082351
+"Two-stress baseline",18,0.203372841724973,1.90830404912227
+"Two-stress baseline",19,-0.366617645802143,1.56614292654898
+"Two-stress baseline",20,0.173488493880239,1.75388359291132
+"Acceleration prior offset",1,0.144153256381507,1.96597813706885
+"Acceleration prior offset",2,0.136516865558643,1.82563466082351
+"Acceleration prior offset",3,0.0279974579876234,1.79589445319113
+"Acceleration prior offset",4,0.173488493880239,1.75388359291132
+"Acceleration prior offset",5,0.173488493880239,1.75388359291132
+"Acceleration prior offset",6,0.203372841724973,1.90830404912227
+"Acceleration prior offset",7,0.00759263893187072,1.68677864403093
+"Acceleration prior offset",8,0.00759263893187072,1.68677864403093
+"Acceleration prior offset",9,0.141622572767106,1.81841205317657
+"Acceleration prior offset",10,0.173488493880239,1.75388359291132
+"Acceleration prior offset",11,0.203372841724973,1.90830404912227
+"Acceleration prior offset",12,0.00759263893187072,1.68677864403093
+"Acceleration prior offset",13,-0.00696341414170201,1.92574403233923
+"Acceleration prior offset",14,0.141622572767106,1.81841205317657
+"Acceleration prior offset",15,0.00759263893187072,1.68677864403093
+"Acceleration prior offset",16,-0.00696341414170201,1.92574403233923
+"Acceleration prior offset",17,0.141622572767106,1.81841205317657
+"Acceleration prior offset",18,0.00759263893187072,1.68677864403093
+"Acceleration prior offset",19,0.0655737730377956,1.8799154025003
+"Acceleration prior offset",20,0.171869918723509,2.04366121145586

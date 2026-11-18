@@ -1,0 +1,9 @@
+"scenario","policy","comparison","median","mean","p90","maximum","percent_over_1h","percent_over_5h","percent_over_10h"
+"Acceleration prior offset","Reliability-full","1 vs 10",0.01400000000001,2.869966,5.68600000000004,235.317,22.6,10.8,6.3
+"Two-stress baseline","Reliability-full","1 vs 10",0.0149999999999864,2.522121,5.64930000000001,111.464,23.2,10.7,7
+"Acceleration prior offset","Trace-full","1 vs 10",68.4755,70.270602,105.2922,456.913,100,99.8,99.4
+"Two-stress baseline","Trace-full","1 vs 10",72.5785,73.74747,108.1679,303.553,100,100,99.4
+"Acceleration prior offset","Reliability-full","1 vs 2",0.00900000000001455,3.569558,5.96240000000008,235.347,21.7,10.7,7.5
+"Two-stress baseline","Reliability-full","1 vs 2",0.00900000000001455,2.265106,4.34509999999997,124.363,20.4,8.8,5.4
+"Acceleration prior offset","Trace-full","1 vs 2",9.16800000000003,12.634291,26.6267,96.678,97.7,73.6,45.4
+"Two-stress baseline","Trace-full","1 vs 2",8.6865,11.907555,25.9784,136.098,98.1,74.9,43

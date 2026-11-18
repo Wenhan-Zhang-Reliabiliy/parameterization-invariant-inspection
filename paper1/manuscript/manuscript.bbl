@@ -1,0 +1,179 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{nelson2009}
+W.~B. Nelson, Accelerated Testing: Statistical Models, Test Plans, and Data
+  Analysis, John Wiley \& Sons, 2009.
+
+\bibitem{meeker2021}
+W.~Q. Meeker, L.~A. Escobar, F.~G. Pascual, Statistical Methods for Reliability
+  Data, 2nd Edition, John Wiley \& Sons, 2021.
+
+\bibitem{chernoff1962}
+H.~Chernoff, Optimal accelerated life designs for estimation, Technometrics
+  4~(4) (1962) 381--408.
+\newblock \href {https://doi.org/10.1080/00401706.1962.10490020}
+  {\path{doi:10.1080/00401706.1962.10490020}}.
+
+\bibitem{chalonerverdinelli1995}
+K.~Chaloner, I.~Verdinelli, Bayesian experimental design: A review, Statistical
+  Science 10~(3) (1995) 273--304.
+
+\bibitem{zhangmeeker2006}
+Y.~Zhang, W.~Q. Meeker, Bayesian methods for planning accelerated life tests,
+  Technometrics 48~(1) (2006) 49--60.
+\newblock \href {https://doi.org/10.1198/004017005000000373}
+  {\path{doi:10.1198/004017005000000373}}.
+
+\bibitem{hong2015}
+Y.~Hong, C.~B. King, Y.~Zhang, W.~Q. Meeker, Bayesian life test planning for
+  log-location-scale family of distributions, Journal of Quality Technology
+  47~(4) (2015) 336--350.
+\newblock \href {https://doi.org/10.1080/00224065.2015.11918138}
+  {\path{doi:10.1080/00224065.2015.11918138}}.
+
+\bibitem{overstallwoods2017}
+A.~M. Overstall, D.~C. Woods, Bayesian design of experiments using approximate
+  coordinate exchange, Technometrics 59~(4) (2017) 458--470.
+\newblock \href {https://doi.org/10.1080/00401706.2016.1251495}
+  {\path{doi:10.1080/00401706.2016.1251495}}.
+
+\bibitem{yangpan2013}
+T.~Yang, R.~Pan, A novel approach to optimal accelerated life test planning
+  with interval censoring, IEEE Transactions on Reliability 62~(2) (2013)
+  527--536.
+
+\bibitem{hanbai2020}
+D.~Han, T.~Bai, Design optimization of a simple step-stress accelerated life
+  test: Contrast between continuous and interval inspections with non-uniform
+  step durations, Reliability Engineering \& System Safety 199 (2020) 106875.
+\newblock \href {https://doi.org/10.1016/j.ress.2020.106875}
+  {\path{doi:10.1016/j.ress.2020.106875}}.
+
+\bibitem{seo2022}
+K.~Seo, W.~Lee, Optimal experimental designs for clustered read-out data of
+  reliability tests via particle swarm optimization, Computers \& Industrial
+  Engineering 171 (2022) 108471.
+
+\bibitem{monroe2011}
+E.~M. Monroe, R.~Pan, C.~M. Anderson-Cook, D.~C. Montgomery, C.~M. Borror, A
+  generalized linear model approach to designing accelerated life test
+  experiments, Quality and Reliability Engineering International 27~(4) (2011)
+  595--607.
+
+\bibitem{tangliu2010}
+L.~C. Tang, X.~Liu, Planning and inference for a sequential accelerated life
+  test, Journal of Quality Technology 42~(1) (2010) 103--118.
+\newblock \href {https://doi.org/10.1080/00224065.2010.11917809}
+  {\path{doi:10.1080/00224065.2010.11917809}}.
+
+\bibitem{lee2018}
+I.-C. Lee, Y.~Hong, S.-T. Tseng, T.~Dasgupta, Sequential bayesian design for
+  accelerated life tests, Technometrics 60~(4) (2018) 472--483.
+\newblock \href {https://doi.org/10.1080/00401706.2018.1437475}
+  {\path{doi:10.1080/00401706.2018.1437475}}.
+
+\bibitem{lu2019}
+L.~Lu, I.-C. Lee, Y.~Hong, Bayesian sequential design based on dual objectives
+  for accelerated life tests, in: Statistical Quality Technologies: Theory and
+  Practice, Springer, 2019, pp. 257--275.
+\newblock \href {https://doi.org/10.1007/978-3-030-20709-0_11}
+  {\path{doi:10.1007/978-3-030-20709-0_11}}.
+
+\bibitem{tung2021}
+H.-P. Tung, I.-C. Lee, Y.~Hong, S.-T. Tseng, B.~X. Wang, Batch sequential
+  designs for accelerated life tests and an application to polymer composite
+  fatigue test, Quality Engineering 33~(2) (2021) 271--285.
+\newblock \href {https://doi.org/10.1080/08982112.2020.1830418}
+  {\path{doi:10.1080/08982112.2020.1830418}}.
+
+\bibitem{chen2022}
+Y.~Chen, Q.~Zhang, M.~Li, W.~Cai, Sequential selection for accelerated life
+  testing via approximate bayesian inference, Naval Research Logistics 69~(2)
+  (2022) 336--351.
+\newblock \href {https://doi.org/10.1002/nav.22009}
+  {\path{doi:10.1002/nav.22009}}.
+
+\bibitem{kim2026}
+J.~S. Kim, S.~Baghel, S.~J. Bae, Bayesian optimal allocation of one-shot device
+  samples in accelerated life tests, IEEE Transactions on Reliability 75 (2026)
+  3876--3890.
+\newblock \href {https://doi.org/10.1109/TR.2026.3743116}
+  {\path{doi:10.1109/TR.2026.3743116}}.
+
+\bibitem{dasilva2026}
+A.~J. da~Silva, C.~A.~A. Gomes, L.~R. de~Souza, R.~S. dos Santos, Optimal
+  accelerated life testing design under constrained resources using double deep
+  q-learning, Quality and Reliability Engineering International 42~(3) (2026)
+  980--991.
+\newblock \href {https://doi.org/10.1002/qre.70134}
+  {\path{doi:10.1002/qre.70134}}.
+
+\bibitem{zhang2025rito}
+W.~Zhang, X.~Zhu, M.~He, N.~Balakrishnan, Adaptive design and dynamic
+  optimization for accelerated life testing with non-destructive one-shot
+  devices: A sequential information maximization approach, Reliability
+  Engineering \& System Safety 266 (2026) 111795.
+\newblock \href {https://doi.org/10.1016/j.ress.2025.111795}
+  {\path{doi:10.1016/j.ress.2025.111795}}.
+
+\bibitem{bertsekas2017}
+D.~P. Bertsekas, Dynamic Programming and Optimal Control, 4th Edition, Vol.~1,
+  Athena Scientific, 2017.
+
+\bibitem{erkanlisoyer2000}
+A.~Erkanli, R.~Soyer, Simulation-based designs for accelerated life tests,
+  Journal of Statistical Planning and Inference 90~(2) (2000) 335--348.
+
+\bibitem{polsonsoyer2017}
+N.~G. Polson, R.~Soyer, Augmented probability simulation for accelerated life
+  test design, Applied Stochastic Models in Business and Industry 33~(3) (2017)
+  322--332.
+\newblock \href {https://doi.org/10.1002/asmb.2256}
+  {\path{doi:10.1002/asmb.2256}}.
+
+\bibitem{jiang2020}
+S.~Jiang, H.~Chai, J.~Gonzalez, R.~Garnett, {BINOCULARS} for efficient,
+  nonmyopic sequential experimental design, in: Proceedings of the 37th
+  International Conference on Machine Learning, Vol. 119 of Proceedings of
+  Machine Learning Research, 2020, pp. 4794--4803.
+
+\bibitem{lam2017}
+R.~Lam, K.~Willcox, Lookahead bayesian optimization with inequality
+  constraints, in: Advances in Neural Information Processing Systems, Vol.~30,
+  2017, pp. 1890--1900.
+
+\bibitem{yue2020}
+X.~Yue, R.~Al~Kontar, Why non-myopic bayesian optimization is promising and how
+  far should we look-ahead? a study via rollout, in: Proceedings of the 23rd
+  International Conference on Artificial Intelligence and Statistics, Vol. 108
+  of Proceedings of Machine Learning Research, 2020, pp. 2808--2817.
+
+\bibitem{silvey1980}
+S.~D. Silvey, Optimal Design, Chapman and Hall, London, 1980.
+\newblock \href {https://doi.org/10.1007/978-94-009-5912-5}
+  {\path{doi:10.1007/978-94-009-5912-5}}.
+
+\bibitem{panyang2014}
+R.~Pan, T.~Yang, Design and evaluation of accelerated life testing plans with
+  dual objectives, Journal of Quality Technology 46~(2) (2014) 114--126.
+\newblock \href {https://doi.org/10.1080/00224065.2014.11917957}
+  {\path{doi:10.1080/00224065.2014.11917957}}.
+
+\bibitem{sun2006}
+J.~Sun, The Statistical Analysis of Interval-Censored Failure Time Data,
+  Springer, 2006.
+
+\bibitem{venablesripley2002}
+W.~N. Venables, B.~D. Ripley, Modern Applied Statistics with S, 4th Edition,
+  Springer, 2002.
+
+\bibitem{kalbfleischprentice1980}
+J.~D. Kalbfleisch, R.~L. Prentice, The Statistical Analysis of Failure Time
+  Data, John Wiley \& Sons, 1980.
+
+\end{thebibliography}
