@@ -57,6 +57,8 @@ for (scenario in unique(results$scenario)) {
   }
 }
 output <- do.call(rbind, output)
+numeric_columns <- vapply(output, is.numeric, logical(1))
+output[numeric_columns] <- lapply(output[numeric_columns], round, digits = 6)
 write.csv(with_model_version(output), "paper1/output/weighted_trace_summary.csv",
           row.names = FALSE)
 
@@ -65,7 +67,7 @@ lines <- c("\\begin{tabular}{llrrrrrr}", "\\toprule",
   "\\midrule")
 for (i in seq_len(nrow(output))) {
   x <- output[i, ]
-  lines <- c(lines, sprintf("%s & %s & %.2f & %.2f & %.3f & %.3f & %.1f & %.3f \\\\",
+  lines <- c(lines, sprintf("%s & %s & %.3f & %.2f & %.3f & %.3f & %.1f & %.3f \\\\",
     x$scenario, x$policy, x$median_schedule_difference, x$p90_schedule_difference,
     x$rmse_scale_1, x$rmse_scale_10, x$percent_detection_over_1h,
     x$maximum_detection_difference))

@@ -41,7 +41,6 @@ for (index in c(1, 3)) {
     source("paper1/R/run_prior_sensitivity.R")
   }
 }
-source("paper1/R/case_motorette.R")
 source("paper1/R/run_grid_refinement.R")
 source("paper1/R/grid_posterior_validation.R")
 source("paper1/R/mcmc_posterior_validation.R")

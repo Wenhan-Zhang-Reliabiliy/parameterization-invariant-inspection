@@ -33,11 +33,13 @@ table <- paste(readLines("paper1/manuscript/weighted_trace_table.tex", warn = FA
                collapse = "\n")
 for (i in seq_len(nrow(summary))) {
   x <- summary[i, ]
-  expected <- sprintf("%s & %s & %.2f & %.2f & %.3f & %.3f & %.1f & %.3f",
+  expected <- sprintf("%s & %s & %.3f & %.2f & %.3f & %.3f & %.1f & %.3f",
     x$scenario, x$policy, x$median_schedule_difference, x$p90_schedule_difference,
     x$rmse_scale_1, x$rmse_scale_10, x$percent_detection_over_1h,
     x$maximum_detection_difference)
-  stopifnot(grepl(expected, table, fixed = TRUE))
+  if (!grepl(expected, table, fixed = TRUE)) {
+    stop("Weighted-table mismatch at row ", i, ": ", expected)
+  }
 }
 writeLines(c("RESS enhancement checks passed.",
              "Six weighted-trace outputs contain 1000 replicates each.",

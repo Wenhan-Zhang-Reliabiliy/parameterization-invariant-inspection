@@ -57,14 +57,6 @@ for (path in c("paper1/output/grid_convergence_single.csv",
   assert_model_version(read.csv(path), path)
 }
 stopifnot(max(identity$max_relative_utility_difference) < 1e-4)
-case <- read.csv("paper1/output/motorette_case_results.csv")
-assert_model_version(case, "motorette_case_results.csv")
-stopifnot(nrow(case) == 4, all(case$convergence == 0), all(is.finite(case$estimate)))
-first_prior <- case[case$stress_scale == 1000, c("prior_alpha", "prior_beta", "prior_logsigma")]
-second_prior <- case[case$stress_scale == 1, c("prior_alpha", "prior_beta", "prior_logsigma")]
-stopifnot(max(abs(first_prior$prior_alpha - second_prior$prior_alpha)) < 1e-8,
-          max(abs(first_prior$prior_beta * 1000 - second_prior$prior_beta)) < 1e-6,
-          max(abs(first_prior$prior_logsigma - second_prior$prior_logsigma)) < 1e-8)
 write.csv(checks, "paper1/output/validation_checks.csv", row.names = FALSE)
 writeLines(c(
   paste("Validated result files:", nrow(checks)),

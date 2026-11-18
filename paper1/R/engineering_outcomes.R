@@ -78,9 +78,22 @@ for (scenario in unique(raw$scenario)) {
               identical(x$failure_time, y$failure_time))
     keep <- x$observed
     difference <- abs(x$detection_time[keep] - y$detection_time[keep])
+    pilot_detected <- !is.na(x$detection_stage) & x$detection_stage == 1
+    post_pilot <- !pilot_detected & keep
+    post_difference <- abs(x$detection_time[post_pilot] - y$detection_time[post_pilot])
+    post_median <- if (length(post_difference)) median(post_difference) else NA_real_
+    post_p90 <- if (length(post_difference)) quantile(post_difference, 0.9) else NA_real_
+    post_maximum <- if (length(post_difference)) max(post_difference) else NA_real_
     summary[[length(summary) + 1]] <- data.frame(
       scenario = scenario, policy = policy, comparison = "1 vs 10",
       observed_replicates = sum(keep),
+      undetected_replicates = sum(!keep),
+      pilot_detected_replicates = sum(pilot_detected),
+      post_pilot_replicates = sum(post_pilot),
+      post_pilot_median_difference = post_median,
+      post_pilot_p90_difference = post_p90,
+      post_pilot_maximum_difference = post_maximum,
+      post_pilot_percent_over_1h = 100 * mean(post_difference > 1),
       median_detection_difference = median(difference),
       p90_detection_difference = quantile(difference, 0.9),
       maximum_detection_difference = max(difference),

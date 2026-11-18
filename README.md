@@ -8,7 +8,7 @@ The paper embeds a Bayesian scalar-target reliability criterion in RITO-style ro
 
 ## Repository contents
 
-- `paper1/R/`: 64 R scripts for simulation, posterior computation, optimization, case analysis, table generation, figures, and validation.
+- `paper1/R/`: 63 R scripts for simulation, posterior computation, optimization, table generation, figures, and validation.
 - `paper1/output/`: raw replicate-level results, derived summaries, generated figures, model checks, and session information.
 - `paper1/manuscript/`: manuscript LaTeX source, bibliography, generated table inputs, and compiled PDF.
 
@@ -19,7 +19,7 @@ The saved outputs are included so that the manuscript can be rebuilt without rep
 The results were generated and validated with:
 
 - R 4.6.2 on Windows 11;
-- base R packages and MASS for the public `motors` dataset;
+- base R packages;
 - TeX Live 2026 with `cas-sc`, `elsarticle-num`, and standard LaTeX packages used in `manuscript.tex`.
 
 See `paper1/output/final_session_info.txt` for the recorded R session.
@@ -67,7 +67,6 @@ The implementation supports checkpoint files. Scenario, prior-strength, grid, dr
 - Saved-schedule analyses compare first-detection times and detection-stage agreement using identical physical failure times.
 - Common-posterior fixed-pilot experiments evaluate bidirectional cross-coding regret.
 - Rolling and common-posterior diagnostics vary grid resolution, posterior draws, and optimization starts.
-- A retrospective Arrhenius analysis uses the public motorette data from MASS.
 
 ## Output organization
 
@@ -92,11 +91,11 @@ All current result files carry the model-version identifier `weibull-cloglog-z0-
 - weighted-trace invariance, all 6000 new replicates, and identical physical failure times across policies and codings;
 - manuscript numbers, table inputs, figure files, citations, references, and LaTeX log errors.
 
-The validation summary is recorded in `paper1/output/validation_summary.txt`, `paper1/output/second_round_consistency.txt`, `paper1/output/ress_enhancement_validation.txt`, and `paper1/output/manuscript_validation.txt`.
+The validation summary is recorded in `paper1/output/validation_summary.txt`, `paper1/output/second_round_consistency.txt`, `paper1/output/ress_enhancement_validation.txt`, `paper1/output/ress_review_validation.txt`, and `paper1/output/manuscript_validation.txt`.
 
 ## Data availability
 
-The motorette data are available as `motors` in the MASS package for R. The analysis uses the data as a retrospective illustration, not as independent validation of long-term reliability prediction.
+The current manuscript uses synthetic simulation studies. No external dataset is required to reproduce the reported results.
 
 ## Manuscript status and contact
 

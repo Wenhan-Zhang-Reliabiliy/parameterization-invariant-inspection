@@ -168,12 +168,4 @@ R.~Pan, T.~Yang, Design and evaluation of accelerated life testing plans with
 J.~Sun, The Statistical Analysis of Interval-Censored Failure Time Data,
   Springer, 2006.
 
-\bibitem{venablesripley2002}
-W.~N. Venables, B.~D. Ripley, Modern Applied Statistics with S, 4th Edition,
-  Springer, 2002.
-
-\bibitem{kalbfleischprentice1980}
-J.~D. Kalbfleisch, R.~L. Prentice, The Statistical Analysis of Failure Time
-  Data, John Wiley \& Sons, 1980.
-
 \end{thebibliography}

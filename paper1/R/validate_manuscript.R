@@ -2,7 +2,6 @@ tex <- paste(readLines("paper1/manuscript/manuscript.tex", warn = FALSE), collap
 schedule <- read.csv("paper1/output/parameterization_schedule_summary.csv")
 accuracy <- read.csv("paper1/output/parameterization_accuracy.csv")
 criterion <- read.csv("paper1/output/criterion_summary.csv")
-case <- read.csv("paper1/output/motorette_case_results.csv")
 
 expect_text <- function(value) {
   stopifnot(grepl(value, tex, fixed = TRUE))
@@ -16,17 +15,6 @@ for (scenario in unique(schedule$scenario)) {
 }
 expect_text(sprintf("%.3f", mean(criterion$seconds[criterion$policy == "Batch-full"])))
 expect_text(sprintf("%.3f", mean(criterion$seconds[criterion$policy == "Trace-full"])))
-trace_case <- case[case$policy == "Trace-full", ]
-reliability_case <- case[case$policy == "Full", ]
-schedule_matrix <- function(x) {
-  matrix(as.numeric(unlist(strsplit(x, ";", fixed = TRUE))), nrow = 5)
-}
-trace_difference <- abs(schedule_matrix(trace_case$schedule[1]) -
-                          schedule_matrix(trace_case$schedule[2]))
-reliability_difference <- abs(schedule_matrix(reliability_case$schedule[1]) -
-                                schedule_matrix(reliability_case$schedule[2]))
-expect_text(sprintf("%.2f", max(trace_difference[2, ])))
-expect_text(sprintf("%.2f", max(reliability_difference)))
 
 for (scenario in unique(accuracy$scenario)) {
   for (policy in unique(accuracy$policy)) {

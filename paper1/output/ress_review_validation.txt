@@ -1,0 +1,5 @@
+RESS review checks passed.
+Pilot-conditioned detection denominators and percentages match saved outputs.
+No undetected pairs remained at the final inspection.
+Terminal observation, conditional beta analysis, and full-precision invariance are described consistently.
+The motorette example is removed from the current manuscript; its local corrected implementation is checked when available.
