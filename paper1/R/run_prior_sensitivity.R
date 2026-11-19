@@ -5,9 +5,9 @@ index <- as.integer(Sys.getenv("PAPER1_SCENARIO", "1"))
 strength <- Sys.getenv("PAPER1_PRIOR_STRENGTH", "Current")
 scenario <- readRDS("paper1/output/scenarios.rds")[[index]]
 scenario$prior_sd <- switch(strength,
-  Weak = c(0.4, 0.4, 0.25),
+  Weak = c(0.4, 0.8, 0.25),
   Current = c(0.8, 0.8, 0.5),
-  Diffuse = c(1.6, 1.6, 1.0),
+  Diffuse = c(1.6, 0.8, 1.0),
   stop("Unknown prior strength")
 )
 replicates <- as.integer(Sys.getenv("PAPER1_REPLICATES", "1000"))

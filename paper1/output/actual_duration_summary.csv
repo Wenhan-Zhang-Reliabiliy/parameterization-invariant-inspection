@@ -1,0 +1,7 @@
+"scenario","policy","replicates","median","q1","q3","iqr","proportion_at_tmax","model_version"
+"Acceleration prior offset","Reliability-full",1000,1000,1000,1000,0,1,"weibull-cloglog-z0-v2"
+"Two-stress baseline","Reliability-full",1000,1000,1000,1000,0,1,"weibull-cloglog-z0-v2"
+"Acceleration prior offset","Trace-full",1000,1000,1000,1000,0,1,"weibull-cloglog-z0-v2"
+"Two-stress baseline","Trace-full",1000,1000,1000,1000,0,1,"weibull-cloglog-z0-v2"
+"Acceleration prior offset","Weighted-full",1000,1000,1000,1000,0,1,"weibull-cloglog-z0-v2"
+"Two-stress baseline","Weighted-full",1000,1000,1000,1000,0,1,"weibull-cloglog-z0-v2"

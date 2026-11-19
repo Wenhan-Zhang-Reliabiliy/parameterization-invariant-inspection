@@ -1,3 +1,4 @@
+source("paper1/R/summarize_actual_duration.R")
 source("paper1/R/validate_model.R")
 source("paper1/R/validate_weighted_trace.R")
 source("paper1/R/validate_results.R")
